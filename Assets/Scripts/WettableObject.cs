@@ -10,6 +10,8 @@ public class WettableObject : GameSystemObject
     {
         base.HandleElementalEnergy(element);
 
+        if (element == null) return;
+
         if (element.m_ElementType == Element.ElementType.Water)
         {
             //burn boy

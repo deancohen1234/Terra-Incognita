@@ -3,7 +3,9 @@ guid: 72cdd2f8ff47f5a4392083450e3bf1d4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_HeatAreaPrefab: {fileID: 2686480829676183823, guid: 94c21b0bc14a5df438b2b76ba51629a4,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
