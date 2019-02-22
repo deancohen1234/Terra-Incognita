@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameSystemObject : MonoBehaviour
 {
+    public const float MAXELEMENTALHEALTH = 1000.0f;
     public enum ElementType { Fire, Water, Earth, Air }
 
+    [Header("GSO Properties")]
     public ElementType m_ElementType = ElementType.Fire;
-
     public float m_ForceThreshold = 50f;
     public float m_ElementalHealth = 25f;
     public float m_AbsorpionRate = 1.0f;
@@ -30,6 +31,8 @@ public class GameSystemObject : MonoBehaviour
     {
         //play same sound effect for all elements
         Debug.Log("Handling Elemental Energy");
+
+        m_ElementalHealth += element.ElementalEnergy;
     }
 
     public virtual float AbsorbEnergy()

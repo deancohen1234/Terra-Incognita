@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4450408076127686387}
   - component: {fileID: 4450408076127686348}
   - component: {fileID: 4450408076127686349}
-  - component: {fileID: 1142447858}
+  - component: {fileID: 5847693214225042207}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -109,7 +109,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1142447858
+--- !u!114 &5847693214225042207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,11 +118,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4450408076127686350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72cdd2f8ff47f5a4392083450e3bf1d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 19439b1bfab84684095b586973b0fb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ElementType: 0
-  m_ForceThreshold: 50
-  m_ElementalHealth: 25
-  m_AbsorpionRate: 1
-  m_MaxHeat: 300
+  ElementalEnergy: 7.5
