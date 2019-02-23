@@ -8,6 +8,7 @@ public class PlayerInteractionManager : MonoBehaviour
 
     public FireInteraction m_FireElementController;
     public AirInteraction m_AirElementController;
+    public EarthInteraction m_EarthElementController;
 
     private ElementController m_CurrentElementController;
     //make single gamesystem element that is used for all interactions
@@ -48,9 +49,13 @@ public class PlayerInteractionManager : MonoBehaviour
 
             if (gso)
             {
-                if ((FlammableObject)gso != null)
+                if (gso.m_ElementType == GameSystemObject.ElementType.Fire)
                 {
                     m_CurrentElementController = m_FireElementController;
+                }
+                else if (gso.m_ElementType == GameSystemObject.ElementType.Earth)
+                {
+                    m_CurrentElementController = m_EarthElementController;
                 }
 
                 m_CurrentElementController.Absorb(gso); //can absorb any element

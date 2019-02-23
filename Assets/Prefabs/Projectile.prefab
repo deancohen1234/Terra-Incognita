@@ -121,5 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19439b1bfab84684095b586973b0fb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ElementType: 0
-  ElementalEnergy: 7.5
+  m_ElementType: 2
+  ElementalEnergy: 0

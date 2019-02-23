@@ -29,9 +29,6 @@ public class GameSystemObject : MonoBehaviour
 
     public virtual void HandleElementalEnergy(Element element)
     {
-        //play same sound effect for all elements
-        Debug.Log("Handling Elemental Energy");
-
         m_ElementalHealth += element.ElementalEnergy;
     }
 
