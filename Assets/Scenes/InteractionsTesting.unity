@@ -1063,16 +1063,18 @@ MonoBehaviour:
   m_MaxInteractDistance: 10
   m_FireElementController:
     m_TotalEnergy: 0
-    m_Projectile: {fileID: 4450408076127686350, guid: 4f391485b7aa42f468991f8e191f03bd,
+    m_AirBox: {fileID: 45344070515699751, guid: 7ce3420d664661843915386ac9ad63b3,
       type: 3}
-    m_Force: 200
-    m_EnergyRequired: 7.5
+    m_Force: 0
+    m_EnergyRequired: 0.5
+    m_EnergyTransfered: 25
   m_AirElementController:
     m_TotalEnergy: 0
     m_AirBox: {fileID: 45344070515699751, guid: 7ce3420d664661843915386ac9ad63b3,
       type: 3}
     m_EnergyRequired: 0.1
-    m_Force: 500
+    m_Force: 100
+    m_EnergyTransfered: 0
 --- !u!1 &1198931639
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,11 +48,19 @@ public class PlayerInteractionManager : MonoBehaviour
 
             if (gso)
             {
+                if ((FlammableObject)gso != null)
+                {
+                    m_CurrentElementController = m_FireElementController;
+                }
+
                 m_CurrentElementController.Absorb(gso); //can absorb any element
                 //draw in element
-
-            
             }
+        }
+
+        else
+        {
+            m_CurrentElementController = m_AirElementController;
         }
     }
 

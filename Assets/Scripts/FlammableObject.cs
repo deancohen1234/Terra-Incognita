@@ -142,4 +142,10 @@ public class FlammableObject : GameSystemObject
     {
         return m_Temperature;
     }
+
+    public void AddHeat(float heat)
+    {
+        m_Temperature += heat;
+        UpdateTemperature();
+    }
 }
