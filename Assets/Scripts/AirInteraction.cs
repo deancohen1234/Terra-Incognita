@@ -6,9 +6,6 @@ using UnityEngine;
 public class AirInteraction : ElementController
 {
     public GameObject m_AirBox;
-    public float m_EnergyRequired = 0.1f;
-    public float m_Force = 100.0f;
-    public float m_EnergyTransfered = 0f;
 
     private GameObject m_InstantiatedAirbox;
 
@@ -30,7 +27,6 @@ public class AirInteraction : ElementController
             m_InstantiatedAirbox.transform.localRotation = Quaternion.identity;
 
             m_InstantiatedAirbox.GetComponent<EnergyBox>().SetupECBox(this, m_Force, m_EnergyTransfered);
-            
         }
 
     }

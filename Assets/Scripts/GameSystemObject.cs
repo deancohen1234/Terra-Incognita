@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//base class for all interactable objects
 public class GameSystemObject : MonoBehaviour
 {
     public const float MAXELEMENTALHEALTH = 1000.0f;
@@ -9,9 +10,9 @@ public class GameSystemObject : MonoBehaviour
 
     [Header("GSO Properties")]
     public ElementType m_ElementType = ElementType.Fire;
-    public float m_ForceThreshold = 50f;
+    public float m_ForceThreshold = 50f; //threshold before object is destroyed
     public float m_ElementalHealth = 25f;
-    public float m_AbsorpionRate = 1.0f;
+    public float m_AbsorpionRate = 1.0f; //rate at which energy is taken from object
 
 
     private void OnCollisionEnter(Collision collision)
@@ -22,6 +23,7 @@ public class GameSystemObject : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //TODO phase out element so everything is a GSO
         Element elementType = collision.gameObject.GetComponent<Element>();
 
         HandleElementalEnergy(elementType);
@@ -29,6 +31,7 @@ public class GameSystemObject : MonoBehaviour
 
     public virtual void HandleElementalEnergy(Element element)
     {
+        //TODO caluclate energy from collision hits
         m_ElementalHealth += element.ElementalEnergy;
     }
 
@@ -40,7 +43,9 @@ public class GameSystemObject : MonoBehaviour
         }
 
         float elementDrain = m_AbsorpionRate * Time.deltaTime;
-        m_ElementalHealth = Mathf.Clamp(m_ElementalHealth - elementDrain, 0, m_ElementalHealth); //TODO make max energy variable
+
+        //make sure health is in correct range
+        m_ElementalHealth = Mathf.Clamp(m_ElementalHealth - elementDrain, 0, MAXELEMENTALHEALTH);
 
         return elementDrain; //return amount of health lost
     }

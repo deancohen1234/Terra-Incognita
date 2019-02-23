@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//takes in player inputs and puts them to interactions
 public class PlayerInteractionManager : MonoBehaviour
 {
     public float m_MaxInteractDistance = 10.0f;
 
+    //classes dictating how elements are used, based on ElementController
     public FireInteraction m_FireElementController;
     public AirInteraction m_AirElementController;
     public EarthInteraction m_EarthElementController;
 
+    //current element being wielded
     private ElementController m_CurrentElementController;
-    //make single gamesystem element that is used for all interactions
 
     private void Start()
     {
@@ -37,6 +39,7 @@ public class PlayerInteractionManager : MonoBehaviour
 
     }
 
+    //raycasts to try and absorb elemental health from objects
     void TryAbsorb()
     {
         RaycastHit hit;
@@ -49,6 +52,7 @@ public class PlayerInteractionManager : MonoBehaviour
 
             if (gso)
             {
+                //check to see which element the player is wielding
                 if (gso.m_ElementType == GameSystemObject.ElementType.Fire)
                 {
                     m_CurrentElementController = m_FireElementController;

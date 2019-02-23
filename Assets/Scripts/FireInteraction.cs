@@ -5,10 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class FireInteraction : ElementController
 {
-    public GameObject m_AirBox;
-    public float m_Force = 0.0f;
-    public float m_EnergyRequired = 7.5f;
-    public float m_EnergyTransfered = 30.0f;
+    public GameObject m_EnergyBox; //box collider dictating area of affect of fire energy
 
     private GameObject m_InstantiatedAirbox;
 
@@ -21,14 +18,13 @@ public class FireInteraction : ElementController
     {
         if (m_InstantiatedAirbox == null)
         {
-            m_InstantiatedAirbox = MonoBehaviour.Instantiate(m_AirBox, originPos, Quaternion.identity);
+            m_InstantiatedAirbox = MonoBehaviour.Instantiate(m_EnergyBox, originPos, Quaternion.identity);
             m_InstantiatedAirbox.transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
             m_InstantiatedAirbox.transform.localRotation = Quaternion.identity;
 
             m_InstantiatedAirbox.GetComponent<EnergyBox>().SetupECBox(this, m_Force, m_EnergyTransfered);
 
         }
-
     }
 
     public override void Dispel()

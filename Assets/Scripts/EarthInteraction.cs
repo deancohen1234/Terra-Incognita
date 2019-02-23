@@ -6,8 +6,6 @@ using UnityEngine;
 public class EarthInteraction : ElementController
 {
     public GameObject m_Projectile;
-    public float m_Force = 50.0f;
-    public float m_EnergyRequired = 7.5f;
 
     public override void Absorb(GameSystemObject gso)
     {
