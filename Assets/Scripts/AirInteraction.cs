@@ -6,6 +6,7 @@ using UnityEngine;
 public class AirInteraction : ElementController
 {
     public GameObject m_AirBox;
+    public float m_EnergyRequired = 0.1f;
     public float m_Force = 10.0f;
 
     private GameObject m_InstantiatedAirbox;
@@ -15,7 +16,7 @@ public class AirInteraction : ElementController
         base.Absorb(gso);
         if (gso.m_ElementType == GameSystemObject.ElementType.Air)
         {
-            //specific fire protocol
+            
         }
     }
 
@@ -25,7 +26,9 @@ public class AirInteraction : ElementController
         {
             m_InstantiatedAirbox = MonoBehaviour.Instantiate(m_AirBox, originPos, Quaternion.identity);
             m_InstantiatedAirbox.transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
-            return;
+            m_InstantiatedAirbox.transform.localRotation = Quaternion.identity;
+
+            m_InstantiatedAirbox.GetComponent<EnergyBox>().SetParentElementController(this);
         }
 
     }
@@ -37,5 +40,11 @@ public class AirInteraction : ElementController
             MonoBehaviour.Destroy(m_InstantiatedAirbox);
             m_InstantiatedAirbox = null;
         }
+    }
+
+    public void Tick()
+    {
+        m_TotalEnergy = Mathf.Clamp(m_TotalEnergy - m_EnergyRequired, 0, 1000); //TODO add max energy const
+        if (m_TotalEnergy <= 0) return;
     }
 }

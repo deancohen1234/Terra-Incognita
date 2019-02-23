@@ -7,6 +7,8 @@ public class EnergyBox : MonoBehaviour
 {
     public float m_ForceMultiplier = 30f;
 
+    private ElementController m_ParentElementController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,12 @@ public class EnergyBox : MonoBehaviour
         if (body)
         {
             Debug.Log(transform.forward);
-            body.AddForce(transform.parent.TransformDirection(transform.forward) * m_ForceMultiplier * Time.deltaTime);
+            body.AddForce(transform.forward * m_ForceMultiplier * Time.deltaTime);
         }
+    }
+
+    public void SetParentElementController(ElementController ec)
+    {
+        m_ParentElementController = ec;
     }
 }

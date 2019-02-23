@@ -50,6 +50,8 @@ public class PlayerInteractionManager : MonoBehaviour
             {
                 m_CurrentElementController.Absorb(gso); //can absorb any element
                 //draw in element
+
+            
             }
         }
     }

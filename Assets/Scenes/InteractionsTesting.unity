@@ -1071,6 +1071,7 @@ MonoBehaviour:
     m_TotalEnergy: 0
     m_AirBox: {fileID: 45344070515699751, guid: 7ce3420d664661843915386ac9ad63b3,
       type: 3}
+    m_EnergyRequired: 0.1
     m_Force: 500
 --- !u!1 &1198931639
 GameObject:
