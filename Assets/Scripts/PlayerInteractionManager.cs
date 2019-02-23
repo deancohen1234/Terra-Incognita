@@ -7,25 +7,31 @@ public class PlayerInteractionManager : MonoBehaviour
     public float m_MaxInteractDistance = 10.0f;
 
     public FireInteraction m_FireElementController;
+    public AirInteraction m_AirElementController;
 
     private ElementController m_CurrentElementController;
     //make single gamesystem element that is used for all interactions
 
     private void Start()
     {
-        m_CurrentElementController = m_FireElementController;
+        m_CurrentElementController = m_AirElementController;
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             TryAbsorb();
         }
 
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButtonDown(0))
         {
             ExpelElement();
+        }
+
+        else if (Input.GetMouseButtonUp(0))
+        {
+            DispelElement();
         }
 
     }
@@ -51,5 +57,10 @@ public class PlayerInteractionManager : MonoBehaviour
     void ExpelElement()
     {
         m_CurrentElementController.Expel(Camera.main.transform.position + Camera.main.transform.forward, Camera.main.transform.forward);
+    }
+
+    void DispelElement()
+    {
+        m_CurrentElementController.Dispel();
     }
 }

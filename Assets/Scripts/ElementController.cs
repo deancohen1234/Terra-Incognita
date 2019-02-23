@@ -24,4 +24,9 @@ public class ElementController
     {
 
     }
+
+    public virtual void Dispel()
+    {
+
+    }
 }

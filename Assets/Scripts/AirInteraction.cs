@@ -23,9 +23,19 @@ public class AirInteraction : ElementController
     {
         if (m_InstantiatedAirbox == null)
         {
-            m_InstantiatedAirbox = MonoBehaviour.Instantiate(m_AirBox, originPos, Quaternion.LookRotation(direction));
+            m_InstantiatedAirbox = MonoBehaviour.Instantiate(m_AirBox, originPos, Quaternion.identity);
+            m_InstantiatedAirbox.transform.parent = GameObject.FindGameObjectWithTag("Player").transform;
             return;
         }
 
+    }
+
+    public override void Dispel()
+    {
+        if (m_InstantiatedAirbox)
+        {
+            MonoBehaviour.Destroy(m_InstantiatedAirbox);
+            m_InstantiatedAirbox = null;
+        }
     }
 }
