@@ -12,12 +12,21 @@ public class PlayerInteractionManager : MonoBehaviour
     public AirInteraction m_AirElementController;
     public EarthInteraction m_EarthElementController;
 
+    public ParticleSystem m_ShootFireSystem;
+
     //current element being wielded
     private ElementController m_CurrentElementController;
+    private ParticleSystemForceField m_ForceField;
+
+    private ParticleSystem.MinMaxCurve m_ForceFieldGravity;
 
     private void Start()
     {
         m_CurrentElementController = m_AirElementController;
+
+        m_ForceField = GetComponent<ParticleSystemForceField>();
+        m_ForceFieldGravity = m_ForceField.gravity;
+        m_ForceField.gravity = 0;
     }
 
     void Update()
@@ -52,6 +61,12 @@ public class PlayerInteractionManager : MonoBehaviour
 
             if (gso)
             {
+                m_ForceField.gravity = m_ForceFieldGravity;
+
+                if (m_ShootFireSystem.isPlaying)
+                {
+                    m_ShootFireSystem.Stop();
+                }
                 //check to see which element the player is wielding
                 if (gso.m_ElementType == GameSystemObject.ElementType.Fire)
                 {
@@ -76,10 +91,23 @@ public class PlayerInteractionManager : MonoBehaviour
     void ExpelElement()
     {
         m_CurrentElementController.Expel(Camera.main.transform.position + Camera.main.transform.forward, Camera.main.transform.forward);
+        m_ForceField.gravity = 0;
+
+        if (!m_ShootFireSystem.isPlaying)
+        {
+            m_ShootFireSystem.Play();
+        }
     }
 
     void DispelElement()
     {
         m_CurrentElementController.Dispel();
+
+        m_ForceField.gravity = 0;
+
+        if (m_ShootFireSystem.isPlaying)
+        {
+            m_ShootFireSystem.Stop();
+        }
     }
 }
