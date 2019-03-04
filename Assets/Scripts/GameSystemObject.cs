@@ -14,6 +14,12 @@ public class GameSystemObject : MonoBehaviour
     public float m_ElementalHealth = 25f;
     public float m_AbsorpionRate = 1.0f; //rate at which energy is taken from object
 
+    protected float m_StartingHealth;
+
+    private void Awake()
+    {
+        m_StartingHealth = m_ElementalHealth;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -26,7 +26,7 @@ public class FlammableObject : GameSystemObject
 
     private float m_Fuel
     {
-        get { return Map(m_ElementalHealth, 0, MAXELEMENTALHEALTH, 0, MAXTEMP); }
+        get { return Map(m_ElementalHealth, 0, m_StartingHealth, 0, 1); } // 1 = full fuel, 0 = no fuel
 
         set { value = m_Fuel; }
     }
@@ -65,6 +65,8 @@ public class FlammableObject : GameSystemObject
         m_Temperature = m_StartTemperature;
 
         UpdateTemperature();
+
+        GetComponent<MeshRenderer>().material.SetFloat("_BurnAmount", 0f);
     }
 
     private void Update()
@@ -85,6 +87,8 @@ public class FlammableObject : GameSystemObject
             }
 
             m_ElementalHealth -= Time.deltaTime * m_HealthLossScalar;
+
+            UpdateBurnShader();
         }
     }
 
@@ -108,6 +112,11 @@ public class FlammableObject : GameSystemObject
 
             UpdateTemperature();
         }
+    }
+
+    private void UpdateBurnShader()
+    {
+        GetComponent<MeshRenderer>().material.SetFloat("_BurnAmount", 1 - m_Fuel);
     }
 
     private void UpdateTemperature()
