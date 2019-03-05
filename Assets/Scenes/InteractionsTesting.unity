@@ -236,6 +236,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -343,6 +348,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -567,6 +577,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -703,6 +718,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -1117,6 +1137,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -1468,6 +1493,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -1604,6 +1634,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -1657,6 +1692,7 @@ GameObject:
   - component: {fileID: 529633458}
   - component: {fileID: 529633457}
   - component: {fileID: 529633456}
+  - component: {fileID: 529633460}
   m_Layer: 0
   m_Name: Sphere (4)
   m_TagString: Untagged
@@ -1724,7 +1760,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 9d73af454be39654f97ab5a6312cf697, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1752,6 +1788,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529633454}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &529633460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529633454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72cdd2f8ff47f5a4392083450e3bf1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ElementType: 0
+  m_ForceThreshold: 50
+  m_ElementalHealth: 25
+  m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
+  m_CatchOnFireTemp: 30
+  m_StartTemperature: 0
+  m_HeatTransferScalar: 0.1
+  m_MaxHeat: 300
+  m_HealthLossScalar: 10
+  m_HeatAreaPrefab: {fileID: 2686480829676183823, guid: 94c21b0bc14a5df438b2b76ba51629a4,
+    type: 3}
+  m_BurningSystemPrefab: {fileID: 6608262564530465288, guid: c4289b724615fb143a8c442a20ad6fb8,
+    type: 3}
+  m_Temperature: 0
 --- !u!1001 &639839894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1922,6 +1990,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -2058,6 +2131,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -2135,6 +2213,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -2330,6 +2413,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -2628,6 +2716,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -2793,6 +2886,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -2900,6 +2998,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -3662,6 +3765,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -3857,6 +3965,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -3934,6 +4047,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -4070,6 +4188,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 1000
   m_AbsorpionRate: 10
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!54 &1373084223
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4334,6 +4457,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -4536,6 +4664,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -4701,6 +4834,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -4808,6 +4946,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -4944,6 +5087,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -5080,6 +5228,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -5398,6 +5551,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -5534,6 +5692,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -5680,6 +5843,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: Infinity
   m_AbsorpionRate: 10
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 40
@@ -5875,6 +6043,22 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1854544386}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -6011,6 +6195,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -6147,6 +6336,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -6283,6 +6477,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -6419,6 +6618,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -6652,6 +6856,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -6729,6 +6938,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 500
   m_AbsorpionRate: 10
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0
@@ -6924,6 +7138,11 @@ MonoBehaviour:
   m_ForceThreshold: 50
   m_ElementalHealth: 25
   m_AbsorpionRate: 1
+  m_OnElementEnergyDepleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_HotColor: {r: 0.8235294, g: 0.29684308, b: 0, a: 1}
   m_CatchOnFireTemp: 30
   m_StartTemperature: 0

@@ -28,7 +28,6 @@ public class EnergyBox : MonoBehaviour
 
         if (body)
         {
-            Debug.Log(transform.forward);
             body.AddForce(transform.forward * m_Force * Time.deltaTime);
         }
 

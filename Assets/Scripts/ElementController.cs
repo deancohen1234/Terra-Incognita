@@ -16,8 +16,6 @@ public class ElementController
     {
         float absorbedAmount = gso.AbsorbEnergy();
         m_TotalEnergy += absorbedAmount;
-
-        Debug.Log("Total Energy: " + m_TotalEnergy);
     }
 
     //how element is expelled or shot or directly used

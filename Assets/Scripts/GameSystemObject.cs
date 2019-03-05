@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //base class for all interactable objects
 public class GameSystemObject : MonoBehaviour
@@ -14,11 +15,28 @@ public class GameSystemObject : MonoBehaviour
     public float m_ElementalHealth = 25f;
     public float m_AbsorpionRate = 1.0f; //rate at which energy is taken from object
 
+    public UnityEvent m_OnElementEnergyDepleted;
+
+    private bool m_EnergyDepleted = false;
+
     protected float m_StartingHealth;
 
     private void Awake()
     {
         m_StartingHealth = m_ElementalHealth;
+    }
+
+    //TODO don't use update
+    public virtual void Update()
+    {
+        if (m_ElementalHealth <= 0)
+        {
+            if (!m_EnergyDepleted)
+            {
+                m_EnergyDepleted = true;
+                m_OnElementEnergyDepleted.Invoke();
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

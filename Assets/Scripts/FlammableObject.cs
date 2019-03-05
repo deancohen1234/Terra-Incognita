@@ -35,6 +35,31 @@ public class FlammableObject : GameSystemObject
     private SphereCollider m_HeatArea; //area of heat emitting from interactable object
     private ParticleSystem m_BurningSystem;
 
+    public override void Update()
+    {
+        base.Update();
+
+        if (m_bIsOnFire)
+        {
+            if (m_ElementalHealth <= 0)
+            {
+                m_ElementalHealth = 0;
+                m_bIsOnFire = false;
+                m_BurningSystem.Stop();
+                m_Temperature = 0;
+
+                CalculateHeatRange();
+                UpdateMaterialEmission();
+
+                return;
+            }
+
+            m_ElementalHealth -= Time.deltaTime * m_HealthLossScalar;
+
+            UpdateBurnShader();
+        }
+    }
+
     public override void HandleElementalEnergy(Element element)
     {
         base.HandleElementalEnergy(element);
@@ -67,29 +92,6 @@ public class FlammableObject : GameSystemObject
         UpdateTemperature();
 
         GetComponent<MeshRenderer>().material.SetFloat("_BurnAmount", 0f);
-    }
-
-    private void Update()
-    {
-        if (m_bIsOnFire)
-        {
-            if (m_ElementalHealth <= 0)
-            {
-                m_ElementalHealth = 0;
-                m_bIsOnFire = false;
-                m_BurningSystem.Stop();
-                m_Temperature = 0;
-
-                CalculateHeatRange();
-                UpdateMaterialEmission();
-
-                return;
-            }
-
-            m_ElementalHealth -= Time.deltaTime * m_HealthLossScalar;
-
-            UpdateBurnShader();
-        }
     }
 
     private void OnTriggerStay(Collider other)
