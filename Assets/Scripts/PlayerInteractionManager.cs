@@ -11,8 +11,7 @@ public class PlayerInteractionManager : MonoBehaviour
     public FireInteraction m_FireElementController;
     public AirInteraction m_AirElementController;
     public EarthInteraction m_EarthElementController;
-
-    public ParticleSystem m_ShootFireSystem;
+    public WaterInteraction m_WaterElementController;
 
     //current element being wielded
     private ElementController m_CurrentElementController;
@@ -62,11 +61,6 @@ public class PlayerInteractionManager : MonoBehaviour
             if (gso)
             {
                 m_ForceField.gravity = m_ForceFieldGravity;
-
-                if (m_ShootFireSystem.isPlaying)
-                {
-                    m_ShootFireSystem.Stop();
-                }
                 //check to see which element the player is wielding
                 if (gso.m_ElementType == GameSystemObject.ElementType.Fire)
                 {
@@ -75,6 +69,10 @@ public class PlayerInteractionManager : MonoBehaviour
                 else if (gso.m_ElementType == GameSystemObject.ElementType.Earth)
                 {
                     m_CurrentElementController = m_EarthElementController;
+                }
+                else if (gso.m_ElementType == GameSystemObject.ElementType.Water)
+                {
+                    m_CurrentElementController = m_WaterElementController;
                 }
 
                 m_CurrentElementController.Absorb(gso); //can absorb any element
@@ -92,11 +90,6 @@ public class PlayerInteractionManager : MonoBehaviour
     {
         m_CurrentElementController.Expel(Camera.main.transform.position + Camera.main.transform.forward, Camera.main.transform.forward);
         m_ForceField.gravity = 0;
-
-        if (!m_ShootFireSystem.isPlaying)
-        {
-            m_ShootFireSystem.Play();
-        }
     }
 
     void DispelElement()
@@ -104,10 +97,5 @@ public class PlayerInteractionManager : MonoBehaviour
         m_CurrentElementController.Dispel();
 
         m_ForceField.gravity = 0;
-
-        if (m_ShootFireSystem.isPlaying)
-        {
-            m_ShootFireSystem.Stop();
-        }
     }
 }

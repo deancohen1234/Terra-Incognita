@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.VFX;
 
 [System.Serializable]
 public class FireInteraction : ElementController
 {
     public GameObject m_EnergyBox; //box collider dictating area of affect of fire energy
+    public VisualEffect m_FirePlume;
 
     private GameObject m_InstantiatedAirbox;
 
@@ -23,7 +25,7 @@ public class FireInteraction : ElementController
             m_InstantiatedAirbox.transform.localRotation = Quaternion.identity;
 
             m_InstantiatedAirbox.GetComponent<EnergyBox>().SetupECBox(this, m_Force, m_EnergyTransfered);
-
+            m_FirePlume.SendEvent("ShootFire");
         }
     }
 
@@ -33,6 +35,7 @@ public class FireInteraction : ElementController
         {
             MonoBehaviour.Destroy(m_InstantiatedAirbox);
             m_InstantiatedAirbox = null;
+            m_FirePlume.Stop();
         }
     }
 
