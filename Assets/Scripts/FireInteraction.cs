@@ -27,6 +27,10 @@ public class FireInteraction : ElementController
             m_InstantiatedAirbox.GetComponent<EnergyBox>().SetupECBox(this, m_Force, m_EnergyTransfered);
             m_FirePlume.SendEvent("ShootFire");
         }
+
+        //update position and direction of particle system
+        m_FirePlume.SetVector3("SpawnPosition", originPos);
+        m_FirePlume.SetVector3("SpawnDirection", direction);
     }
 
     public override void Dispel()

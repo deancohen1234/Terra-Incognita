@@ -5,6 +5,10 @@ using UnityEngine;
 //takes in player inputs and puts them to interactions
 public class PlayerInteractionManager : MonoBehaviour
 {
+    //Hand Transforms
+    public Transform m_RightHand;
+    public Transform m_LeftHand;
+
     public float m_MaxInteractDistance = 10.0f;
 
     //classes dictating how elements are used, based on ElementController
@@ -30,17 +34,22 @@ public class PlayerInteractionManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger))
         {
             TryAbsorb();
         }
 
-        else if (Input.GetMouseButtonDown(0))
+        else if (OVRInput.GetUp(OVRInput.Button.SecondaryHandTrigger))
+        {
+            DispelElement();
+        }
+
+        else if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
         {
             ExpelElement();
         }
 
-        else if (Input.GetMouseButtonUp(0))
+        else if (OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger))
         {
             DispelElement();
         }
@@ -88,7 +97,7 @@ public class PlayerInteractionManager : MonoBehaviour
 
     void ExpelElement()
     {
-        m_CurrentElementController.Expel(Camera.main.transform.position + Camera.main.transform.forward, Camera.main.transform.forward);
+        m_CurrentElementController.Expel(m_RightHand.position, m_RightHand.forward);
         m_ForceField.gravity = 0;
     }
 
