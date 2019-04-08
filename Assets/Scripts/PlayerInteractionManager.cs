@@ -60,7 +60,7 @@ public class PlayerInteractionManager : MonoBehaviour
     void TryAbsorb()
     {
         RaycastHit hit;
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0)).direction);
+        Ray ray = new Ray(m_RightHand.position, m_RightHand.forward);
 
         if (Physics.Raycast(ray, out hit, 10.0f))
         {
